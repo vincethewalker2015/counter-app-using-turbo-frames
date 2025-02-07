@@ -1,5 +1,5 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "Update Counter", update_counter_path %>
+<%= button_to "Update Counter", update_counter_path, remote: true, method: :post %>
 <%= render "pages/counter", counter: current_user&.counter %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get "update_counter", to: "pages#update_counter", as: "update_counter"
+  post "update_counter", to: "pages#update_counter", as: "update_counter"
 
   root 'pages#home'
   devise_for :users

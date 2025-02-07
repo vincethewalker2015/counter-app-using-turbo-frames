@@ -15,9 +15,9 @@ class PagesController < ApplicationController
   private
 
   def update_counter_text
-    render tubo_stream:
+    render turbo_stream:
       turbo_stream.replace("counter",
         partial: "pages/counter",
-        locals: { counter: current_user.counter })
+        locals: { counter: current_user&.counter })
   end
 end
