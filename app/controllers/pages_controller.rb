@@ -8,6 +8,16 @@ class PagesController < ApplicationController
     current_user.counter +=1
     current_user.save
 
-    redirect_to root_path
+    # redirect_to root_path
+    update_counter_text
+  end
+
+  private
+
+  def update_counter_text
+    render tubo_stream:
+      turbo_stream.replace("counter",
+        partial: "pages/counter",
+        locals: { counter: current_user.counter })
   end
 end
